@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Word Game</title>
+
+<!-- Link Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<!-- Link Bootstrap JS and JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="jumbotron">
+<div class="p-3 mb-2 bg-light text-dark bg-primary">
+  <center>
+  <h1>Word Guess Game!</h1>
+  <h4>The Computer randomly generates a singers name...</h4>
+  <h5>Guess whose name it is.</h5>
+  <p id="initGame" /p>
+	<h4 id="sayPhrase">Press Any Letter Key to Get Started!</h4>
+  </p>
+  	<div class="col-md-6 gameplay-column">
+		<div class="row">
+		   <div class="col-sm-6" style="background-color:yellow;">
+                       <h4>Wins</h4>
+                       <h5 id="totalWins"></h5>
+		   </div>
+		   <div class="col-sm-6" style="background-color:pink;">
+		       <h4>Loses</h4>
+                       <h5 id="totalLoses"></h5>
+	           </div>
+		</div>
+                <h4>The Current Word</h4>
+                <h3 id="currentWord"></h3>
+                <h4>Number of Guesses Remaining</h4>
+                <h6 id="remainingGuesses"></h6>
+                <h4>Letters Guessed by Player</h4>
+                <h3 id="guessedLetters"></h3>
+  	</div>
+  </center>
+</div>
+</div>
+    
+<script type="text/javascript" src="./assets/javascript/game.js"></script>
+</body>
+
+</html>
