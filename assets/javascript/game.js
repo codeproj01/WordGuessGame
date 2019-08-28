@@ -24,7 +24,7 @@ let currentWordIndex;
 let remainingGuesses = 0;      
 let gameStarted = false;
 let guessingWord = [];           
-let completed = false;         
+let completed = true;         
 let wins = 0;                   
 let loses = 0;                  
 
@@ -35,11 +35,12 @@ function gameSetup() {
     currentWordIndex = Math.floor(Math.random() * (choiceOfWords.length));
     guessedLetters = [];
     guessingWord = [];
-
+    
+    
     // Get underscores for placeholder for length of random word.
     for (let i = 0; i < choiceOfWords[currentWordIndex].length; i++) {
         guessingWord.push("_");
-    }
+    } 
     updateDisplay();
 };
 
@@ -61,7 +62,8 @@ function updateDisplay() {
 };
 
 // listen for user input:
-document.onkeyup = function(event) {
+document.onkeydown = function(event) {
+    event.preventDefault;
     // If we finished a game, dump last keystroke and reset.
     if(completed) {
         gameSetup();
@@ -82,7 +84,6 @@ function makeGuess(letter) {
         if (!gameStarted) {
             gameStarted = true;
         }
-
         // Make sure we didn't use this letter yet
         if (guessedLetters.indexOf(letter) === -1) {
             guessedLetters.push(letter);
@@ -93,6 +94,7 @@ function makeGuess(letter) {
     updateDisplay();
     checkWin();
     checkLoses();
+    
 };
 
 // This function takes a letter and Steps through the loop to determine if there is a letter match.
